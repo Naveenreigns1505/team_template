@@ -1,0 +1,17 @@
+{
+  "name": "My Assignment Environment",
+  "image": "mcr.microsoft.com/vscode/devcontainers/javascript-node:0-14",
+  "extensions": [
+    "esbenp.prettier-vscode",
+    "dbaeumer.vscode-eslint",
+    "ms-python.python",
+    "vsciot-vscode.vscode-arduino"   // Arduino extension for simulation
+  ],
+  "postCreateCommand": "npm install",
+  "settings": {
+    "editor.formatOnSave": true,
+    "arduino.path": "/home/vscode/.arduino15",
+    "arduino.additionalUrls": "",
+    "arduino.defaultBaudRate": 115200
+  }
+}
