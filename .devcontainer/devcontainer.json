@@ -1,17 +1,16 @@
 {
-  "name": "My Assignment Environment",
-  "image": "mcr.microsoft.com/vscode/devcontainers/javascript-node:0-14",
-  "extensions": [
-    "esbenp.prettier-vscode",
-    "dbaeumer.vscode-eslint",
-    "ms-python.python",
-    "vsciot-vscode.vscode-arduino"   // Arduino extension for simulation
-  ],
-  "postCreateCommand": "npm install",
+  "name": "Wokwi Arduino Environment",
+  "image": "mcr.microsoft.com/vscode/devcontainers/javascript-node:0-18",  // Node.js environment
+  "postCreateCommand": "npm install -g @wokwi/cli",  // Install Wokwi CLI after container is created
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-vscode.cpptools",        // C++ Tools for Arduino
+        "arduino.vscode-arduino"      // Arduino extension for VSCode
+      ]
+    }
+  },
   "settings": {
-    "editor.formatOnSave": true,
-    "arduino.path": "/home/vscode/.arduino15",
-    "arduino.additionalUrls": "",
-    "arduino.defaultBaudRate": 115200
+    "terminal.integrated.shell.linux": "/bin/bash"
   }
 }
